@@ -1,0 +1,104 @@
+{% extends "layouts/base.html" %} {% block title %} Policyholders {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <div class="main-body">
+          <div class="page-wrapper">
+            <!-- [ Main Content ] start -->
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>Customer Information Management</h5>
+                  </div>
+                  <div class="card-block">
+                    <div class="row">
+                      <div class="col-sm-12 mb-4">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email" />
+                          <small id="emailHelp" class="form-text text-muted"
+                            >We'll never share your email with anyone
+                            else.</small
+                          >
+                        </div>
+                      </div>
+                      <div class="col-sm-6 mb-4">
+                        <div class="form-group">
+                          <label for="fn">First Name</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="fn"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email" />
+                        </div>
+                      </div>
+                      <div class="col-sm-6 mb-4">
+                        <div class="form-group">
+                          <label for="ln">Last Name</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="ln"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email" />
+                        </div>
+                      </div>
+                      <div class="col-sm-12 mb-4">
+                        <div class="form-group">
+                          <label for="add">Address</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="add"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email" />
+                          <small id="addd" class="form-text text-muted"
+                            >This is your shipments address</small
+                          >
+                        </div>
+                      </div>
+                      <div class="col-sm-12 mb-4">
+                        <div class="form-group">
+                          <label for="abt">About Info</label>
+                          <textarea
+                            type="email"
+                            class="form-control"
+                            id="abt"
+                            aria-describedby="emailHelp"
+                            placeholder="Bio"></textarea>
+                          <small id="abf" class="form-text text-muted"
+                            >We'll show this on your profile.</small
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- [ Main Content ] end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
