@@ -24,20 +24,7 @@
           ><i class="feather icon-maximize"></i
         ></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="dropdown-toggle" href="javascript:" data-toggle="dropdown"
-          >Dropdown</a
-        >
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="javascript:">Action</a></li>
-          <li>
-            <a class="dropdown-item" href="javascript:">Another action</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="javascript:">Something else here</a>
-          </li>
-        </ul>
-      </li>
+
       <li class="nav-item">
         <div class="main-search">
           <div class="input-group">
@@ -46,7 +33,7 @@
               id="m-search"
               class="form-control"
               placeholder="Search . . ." />
-            <a href="javascript:" class="input-group-append search-close">
+            <a href="" class="input-group-append search-close">
               <i class="feather icon-x input-group-text"></i>
             </a>
             <span class="input-group-append search-btn btn btn-primary">
@@ -76,19 +63,11 @@
                 class="img-radius"
                 alt="User-Profile-Image" />
               <span> {{ current_user.username }} </span>
-              <a
-                href="{{ url_for('authentication_blueprint.logout') }}"
-                class="dud-logout"
-                title="Logout">
+              <a href="/auth-signin.html" class="dud-logout" title="Logout">
                 <i class="feather icon-log-out"></i>
               </a>
             </div>
             <ul class="pro-body">
-              <li>
-                <a href="/profile.html" class="dropdown-item"
-                  ><i class="feather icon-settings"></i> Settings</a
-                >
-              </li>
               <li>
                 <a href="/profile.html" class="dropdown-item"
                   ><i class="feather icon-user"></i> Profile</a

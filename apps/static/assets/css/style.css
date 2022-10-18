@@ -324,7 +324,7 @@ p.text-muted {
 }
 .dropdown-menu.show:before {
   content: "\63";
-  font-family: "pct";
+  font-family: "inter";
   position: absolute;
   left: 15px;
   top: -5px;
@@ -1544,9 +1544,9 @@ p.text-muted {
   color: #fff;
 }
 .b-brand .b-title {
-  margin-left: 14px;
-  font-size: 2rem;
-  font-weight: 800;
+  margin-left: 16px;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: #f4f2dc;
 }
 
@@ -1874,7 +1874,7 @@ p.text-muted {
   z-index: 1001;
   font-size: 40px;
   line-height: 0;
-  color: #fff;
+  display: none;
   text-shadow: 0 -2px 2px rgba(65, 76, 78, 0.12);
 }
 .pcoded-header .dropdown .notification {
@@ -2001,6 +2001,7 @@ p.text-muted {
 }
 .pcoded-header .dropdown.drp-user.show:before {
   color: #04a9f5;
+  display: none;
 }
 
 /* header css end */
@@ -2334,12 +2335,17 @@ p.text-muted {
   opacity: 0.5;
 }
 .pcoded-navbar .pcoded-submenu {
-  background: #39465e;
+  background: #f4f2dc;
   padding: 15px 0;
+}
+
+.pcoded-navbar .pcoded-submenu a {
+  color: #265138;
 }
 .pcoded-navbar a {
   color: #f4f2dc;
 }
+
 .pcoded-navbar .navbar-content,
 .pcoded-navbar .navbar-wrapper {
   width: 100%;
