@@ -1,19 +1,22 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "pct";
-  src:url("fonts/pct.eot");
-  src:url("fonts/pct.eot?#iefix") format("embedded-opentype"),
-    url("fonts/pct.woff") format("woff"),
-    url("fonts/pct.ttf") format("truetype"),
-    url("fonts/pct.svg#pct") format("svg");
+  font-family: "inter";
+  src: url("fonts/Inter-Black.ttf") format("truetype"),
+    url("fonts/Inter-Bold.ttf") format("truetype"),
+    url("fonts/Inter-ExtraBold.ttf") format("truetype"),
+    url("fonts/Inter-ExtraLight.ttf") format("truetype"),
+    url("fonts/Inter-Light.ttf") format("truetype"),
+    url("fonts/Inter-Medium.ttf") format("truetype"),
+    url("fonts/Inter-Regular.ttf") format("truetype"),
+    url("fonts/Inter-SemiBold.ttf") format("truetype"),
+    url("fonts/Inter-Thin.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-
 }
 
 [data-icon]:before {
-  font-family: "pct" !important;
+  font-family: "inter" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
