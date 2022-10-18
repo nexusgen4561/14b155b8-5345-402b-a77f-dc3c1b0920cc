@@ -3,9 +3,14 @@
   <div class="navbar-wrapper">
     <div class="navbar-brand header-logo">
       <a href="/" class="b-brand">
-        <div class="b-bg">
+        <img
+          src="{{ config.ASSETS_ROOT }}/images/logo-beige.png"
+          width="50"
+          height="50"
+          alt="" />
+        <!-- <div class="b-bg">
           <i class="feather icon-trending-up"></i>
-        </div>
+        </div> -->
         <span class="b-title">Asfalis</span>
       </a>
       <a class="mobile-menu" id="mobile-collapse" href="javascript:"
@@ -15,7 +20,7 @@
     <div class="navbar-content scroll-div">
       <ul class="nav pcoded-inner-navbar">
         <li class="nav-item pcoded-menu-caption">
-          <label>Navigation</label>
+          <label>Management</label>
         </li>
         <li
           data-username="dashboard Default Ecommerce CRM Analytics Crypto Project"
@@ -30,7 +35,7 @@
           class="nav-item {% if 'profile' in segment %} active {% endif %}">
           <a href="/profile.html" class="nav-link">
             <span class="pcoded-micon"><i class="feather icon-user"></i></span>
-            <span class="pcoded-mtext">Profile Page</span></a
+            <span class="pcoded-mtext">User Profile</span></a
           >
         </li>
         <li
@@ -41,15 +46,25 @@
             <span class="pcoded-mtext">Policyholders</span></a
           >
         </li>
+        <li
+          data-username="Profile Page"
+          class="nav-item {% if 'policies' in segment %} active {% endif %}">
+          <a href="/policies.html" class="nav-link">
+            <span class="pcoded-micon"
+              ><i class="feather icon-file-text"></i
+            ></span>
+            <span class="pcoded-mtext">Policies</span></a
+          >
+        </li>
         <li class="nav-item pcoded-menu-caption">
-          <label>UI Element</label>
+          <label>Customer Feedback</label>
         </li>
         <li
           data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds"
           class="nav-item pcoded-hasmenu">
           <a href="javascript:" class="nav-link"
             ><span class="pcoded-micon"><i class="feather icon-box"></i></span
-            ><span class="pcoded-mtext">Components</span></a
+            ><span class="pcoded-mtext">Feedback</span></a
           >
           <ul class="pcoded-submenu">
             <li class=""><a href="/bc_button.html" class="">Button</a></li>
@@ -75,15 +90,15 @@
           </ul>
         </li>
         <li class="nav-item pcoded-menu-caption">
-          <label>Forms & table</label>
+          <label>Data Analytics</label>
         </li>
         <li
           data-username="form elements advance componant validation masking wizard picker select"
           class="nav-item {% if 'form_elements' in segment %} active {% endif %}">
           <a href="/form_elements.html" class="nav-link"
             ><span class="pcoded-micon"
-              ><i class="feather icon-file-text"></i></span
-            ><span class="pcoded-mtext">Form elements</span></a
+              ><i class="feather icon-bar-chart"></i></span
+            ><span class="pcoded-mtext">Cohort Analysis</span></a
           >
         </li>
         <li
@@ -91,8 +106,8 @@
           class="nav-item {% if 'tbl_bootstrap' in segment %} active {% endif %}">
           <a href="/tbl_bootstrap.html" class="nav-link"
             ><span class="pcoded-micon"
-              ><i class="feather icon-server"></i></span
-            ><span class="pcoded-mtext">Table</span></a
+              ><i class="feather icon-bar-chart"></i></span
+            ><span class="pcoded-mtext">Churn Analysis</span></a
           >
         </li>
         <li class="nav-item pcoded-menu-caption">
