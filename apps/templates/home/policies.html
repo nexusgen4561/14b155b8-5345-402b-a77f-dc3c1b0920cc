@@ -14,17 +14,21 @@
             <div class="row align-items-center">
               <div class="col-md-12">
                 <div class="page-header-title">
-                  <h5 class="m-b-10" style="font-weight: 600">
-                    Policies Management
-                  </h5>
+                  <h5 class="m-b-25" style="font-weight: 600"></h5>
                 </div>
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item">
                     <a href="/"><i class="feather icon-home"></i></a>
                   </li>
                   <li class="breadcrumb-item">
-                    <a href="javascript:">Policies Management</a>
+                    <a href="javascript:">Policies</a>
                   </li>
+                  <div class="container pt-3">
+                    {% with messages=get_flashed_messages(with_categories=true)
+                    %} {% if messages %} {% for category,message in messages %}
+                    <div class="alert alert-{{category}}">{{message}}</div>
+                    {% endfor %} {% endif %} {% endwith %}
+                  </div>
                 </ul>
               </div>
             </div>
@@ -40,61 +44,67 @@
                   <div class="card-header">
                     <h5>Policies Management</h5>
                   </div>
-                  <div class="card-block">
+                  <div class="card-block table-border-style">
                     {% block body %}
                     <p class="text-right">
-                      <a href='{{url_for("add_user")}}' class="btn btn-success"
+                      <a
+                        href='{{url_for("add_policy")}}'
+                        class="btn btn-success"
                         >+Add Policy</a
                       >
                     </p>
-                    <table class="table table-bordered">
-                      <thead>
-                        <!-- <th>Policy No.</th>
-                        <th>Date Created</th>
-                        <th>Policy Code</th>
-                        <th>Policy Name</th>
-                        <th>Policy Cost</th>
-                        <th>Duration</th>
-                        <th>Document</th> -->
-                        <th>ID</th>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <th>Policy No.</th>
+                          <th>Date Created</th>
+                          <th>Policy Code</th>
+                          <th>Policy Name</th>
+                          <th>Policy Cost</th>
+                          <th>Duration</th>
+                          <th>Status</th>
+                          <th>Document</th>
+                          <!-- <th>ID</th>
                         <th>Name</th>
-                        <th>Contact Number</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                      </thead>
-                      <tbody>
-                        {% for row in datas %}
-                        <tr>
-                          <!-- <td>{{loop.ID}}</td>
-                          <td>{{row.DateCreated}}</td>
-                          <td>{{row.Policy_Code}}</td>
-                          <td>{{row.Policy_Name}}</td>
-                          <td>{{row.Policy_Cost}}</td>
-                          <td>{{row.Duration}}</td>
-                          <td>{{row.Status}}</td>
-                          <td>{{row.Document}}</td> -->
-                          <td>{{loop.index}}</td>
+                        <th>Contact Number</th> -->
+                          <th>Edit</th>
+                          <th>Delete</th>
+                        </thead>
+                        <tbody>
+                          {% for row in datas %}
+                          <tr>
+                            <td>{{row.ID}}</td>
+                            <td>{{row.Date_Created}}</td>
+                            <td>{{row.Policy_Code}}</td>
+                            <td>{{row.Policy_Name}}</td>
+                            <td>{{row.Policy_Cost}}</td>
+                            <td>{{row.Duration}}</td>
+                            <td>{{row.Status}}</td>
+                            <td>{{row.Document}}</td>
+                            <!-- <td>{{loop.index}}</td>
                           <td>{{row.UNAME}}</td>
-                          <td>{{row.CONTACT}}</td>
-                          <td>
-                            <a
-                              href='{{url_for("edit_user",uid=row.UID)}}'
-                              class="btn btn-primary"
-                              >Edit</a
-                            >
-                          </td>
-                          <td>
-                            <a
-                              href='{{url_for("delete_user",uid=row.UID)}}'
-                              class="btn btn-danger"
-                              onclick='return confirm("Are You Sure")'
-                              >Delete</a
-                            >
-                          </td>
-                        </tr>
-                        {%endfor%}
-                      </tbody>
-                    </table>
+                          <td>{{row.CONTACT}}</td> -->
+                            <td>
+                              <a
+                                href='{{url_for("edit_policy",uid=row.ID)}}'
+                                class="btn btn-primary"
+                                >Edit</a
+                              >
+                            </td>
+                            <td>
+                              <a
+                                href='{{url_for("delete_policy",uid=row.ID)}}'
+                                class="btn btn-danger"
+                                onclick='return confirm("Are You Sure")'
+                                >Delete</a
+                              >
+                            </td>
+                          </tr>
+                          {%endfor%}
+                        </tbody>
+                      </table>
+                    </div>
+
                     {% endblock %}
                   </div>
                 </div>

@@ -1721,7 +1721,7 @@ p.text-muted {
 .pcoded-header .input-group .input-group-text:hover,
 .pcoded-header a:hover,
 .pcoded-header dropdown-toggle:hover {
-  color: #04a9f5;
+  color: #3f4d67;
 }
 .pcoded-header #mobile-header {
   display: none;
@@ -1808,8 +1808,8 @@ p.text-muted {
 .pcoded-header .main-search.open .input-group .search-btn {
   padding: 5px;
   margin-left: 5px;
-  background: #04a9f5;
-  border-color: #04a9f5;
+  background: #265138;
+  border-color: #265138;
 }
 .pcoded-header .main-search.open .input-group .search-btn .input-group-text {
   color: #fff;
@@ -2585,17 +2585,18 @@ p.text-muted {
 .pcoded-navbar .pcoded-inner-navbar li.active > a,
 .pcoded-navbar .pcoded-inner-navbar li:focus > a,
 .pcoded-navbar .pcoded-inner-navbar li:hover > a {
-  color: #1dc4e9;
+  background: #f4f2dc;
+  color: #265138;
 }
 .pcoded-navbar .pcoded-inner-navbar li .pcoded-submenu > li.active > a:before,
 .pcoded-navbar .pcoded-inner-navbar li .pcoded-submenu > li:focus > a:before,
 .pcoded-navbar .pcoded-inner-navbar li .pcoded-submenu > li:hover > a:before {
-  background: #1dc4e9;
+  background: #265138;
 }
 .pcoded-navbar .pcoded-inner-navbar > li.active:after,
 .pcoded-navbar .pcoded-inner-navbar > li.pcoded-trigger:after {
   content: "";
-  background-color: #1dc4e9;
+  background-color: #265138;
   z-index: 1027;
   position: absolute;
   left: 0;
@@ -6239,26 +6240,6 @@ body.box-layout .pcoded-navbar.theme-horizontal ~ .pcoded-header {
   background-image: url("../images/nav-bg/navbar-img-6.jpg");
 }
 
-.nav-link.active.h-blue {
-  background: #04a9f5 !important;
-}
-
-.nav-link.active.h-red {
-  background: #ff5252 !important;
-}
-
-.nav-link.active.h-purple {
-  background: #9575cd !important;
-}
-
-.nav-link.active.h-lightblue {
-  background: #23b7e5 !important;
-}
-
-.nav-link.active.h-dark {
-  background: #323437 !important;
-}
-
 @media all and (-ms-high-contrast: none) {
   .pcoded-header .dropdown.show::before {
     line-height: 0.1;
@@ -9206,9 +9187,9 @@ a.btn-theme.active {
 }
 
 .btn-success {
-  color: #fff;
-  background-color: #1de9b6;
-  border-color: #1de9b6;
+  color: #f4f2dc;
+  background-color: #265138;
+  border-color: #265138;
 }
 .btn-success:hover {
   color: #fff;

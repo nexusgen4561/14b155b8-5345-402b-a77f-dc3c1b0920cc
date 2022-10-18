@@ -45,53 +45,64 @@ if DEBUG:
 
 
 @app.route("/")
-@app.route("/policies")
+@app.route("/policies.html")
 def index():
     con=sql.connect("db_web.db")
     con.row_factory=sql.Row
     cur=con.cursor()
-    cur.execute("select * from users")
+    cur.execute("select * from Policies")
     data=cur.fetchall()
     return render_template('home/policies.html',datas=data)
 
-@app.route("/add_user",methods=['POST','GET'])
-def add_user():
+@app.route("/add_policy",methods=['POST','GET'])
+def add_policy():
     if request.method=='POST':
-        uname=request.form['uname']
-        contact=request.form['contact']
+        date=request.form['date']
+        code=request.form['code']
+        name=request.form['name']
+        cost=request.form['cost']
+        duration=request.form['duration']
+        status=request.form['status']
+        document=request.form['document']
         con=sql.connect("db_web.db")
         cur=con.cursor()
-        cur.execute("insert into users(UNAME,CONTACT) values (?,?)",(uname,contact))
+        # cur.execute("insert into users(UNAME,CONTACT) values (?,?)",(uname,contact))
+        cur.execute("insert into Policies(Date_Created, Policy_Code, Policy_Name, Policy_Cost, Duration, Status, Document) values (?,?,?,?,?,?,?)",(date,code,name,cost,duration,status,document))
         con.commit()
-        flash('User Added','success')
+        flash('Policy Added','success')
         return redirect(url_for("index"))
-    return render_template("/home/add_user.html")
+    return render_template("/home/add_policy.html")
 
-@app.route("/edit_user/<string:uid>",methods=['POST','GET'])
-def edit_user(uid):
+@app.route("/edit_policy/<string:uid>",methods=['POST','GET'])
+def edit_policy(uid):
     if request.method=='POST':
-        uname=request.form['uname']
-        contact=request.form['contact']
+        date=request.form['date']
+        code=request.form['code']
+        name=request.form['name']
+        cost=request.form['cost']
+        duration=request.form['duration']
+        status=request.form['status']
+        document=request.form['document']
         con=sql.connect("db_web.db")
         cur=con.cursor()
-        cur.execute("update users set UNAME=?,CONTACT=? where UID=?",(uname,contact,uid))
+        cur.execute("update Policies set DateCreated=?,Policy_Code=?,Policy_Name=?,Policy_Cost=?,Duration=?,Status=?,Document=? where UID=?",(date,code,name,cost,duration,status,document,uid))
         con.commit()
-        flash('User Updated','success')
+        flash('Policy Updated','success')
         return redirect(url_for("index"))
     con=sql.connect("db_web.db")
     con.row_factory=sql.Row
     cur=con.cursor()
-    cur.execute("select * from users where UID=?",(uid,))
+    cur.execute("select * from Policies where ID=?",(uid,))
     data=cur.fetchone()
-    return render_template("/home/edit_user.html",datas=data)
+    return render_template("/home/edit_policy.html",datas=data)
     
-@app.route("/delete_user/<string:uid>",methods=['GET'])
-def delete_user(uid):
+@app.route("/delete_policy/<string:uid>",methods=['GET'])
+def delete_policy(uid):
     con=sql.connect("db_web.db")
     cur=con.cursor()
-    cur.execute("delete from users where UID=?",(uid,))
+    cur.execute("delete from Policies where ID=?",(uid,))
     con.commit()
-    flash('User Deleted','warning')
+    flash('Policy Deleted','warning')
     return redirect(url_for("index"))
     
 if __name__ == "__main__":
