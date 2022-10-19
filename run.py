@@ -22,6 +22,10 @@ get_config_mode = 'Debug' if DEBUG else 'Production'
 
 app=Flask(__name__,template_folder='templates')
 
+# Images path
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+target = os.path.join(APP_ROOT, 'images/')
+
 try:
 
     # Load the configuration using the default values
@@ -52,7 +56,7 @@ def index():
     cur=con.cursor()
     cur.execute("select * from Policies")
     data=cur.fetchall()
-    return render_template('home/policies.html',datas=data)
+    return render_template('/home/policies.html',datas=data)
 
 @app.route("/add_policy",methods=['POST','GET'])
 def add_policy():
@@ -104,6 +108,11 @@ def delete_policy(uid):
     con.commit()
     flash('Policy Deleted','warning')
     return redirect(url_for("index"))
+
+
+# Feedback Forms
+
+
     
 if __name__ == "__main__":
     app.run()
