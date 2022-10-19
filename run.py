@@ -3,7 +3,8 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 # pogi mo jeku
-
+# pogi ni edward
+# pogi ni marius
 import os
 from flask_migrate import Migrate
 from flask_minify import Minify
