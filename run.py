@@ -2,6 +2,7 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
+# pogi mo jeku
 
 import os
 from flask_migrate import Migrate
