@@ -24,6 +24,10 @@ get_config_mode = 'Debug' if DEBUG else 'Production'
 
 app = Flask(__name__, template_folder='templates')
 
+# Images path
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+target = os.path.join(APP_ROOT, 'images/')
+
 try:
 
     # Load the configuration using the default values
@@ -52,8 +56,8 @@ def index():
     con.row_factory = sql.Row
     cur = con.cursor()
     cur.execute("select * from Policies")
-    data = cur.fetchall()
-    return render_template('home/policies.html', datas=data)
+    data=cur.fetchall()
+    return render_template('home/policies.html',datas=data)
 
 
 @app.route("/add_policy", methods=['POST', 'GET'])
@@ -110,55 +114,6 @@ def delete_policy(uid):
     con.commit()
     flash('Policy Deleted', 'warning')
     return redirect(url_for("index"))
-
-# Feedback Churn
-
-
-@app.route("/")
-@app.route("/churn_forms.html")
-def churn():
-    con = sql.connect("db_web.db")
-    con.row_factory = sql.Row
-    cur = con.cursor()
-    cur.execute("select * from feedbacks")
-    data = cur.fetchall()
-    return render_template('home/churn_forms.html', datas=data)
-
-
-@app.route("/churn_forms", methods=['POST', 'GET'])
-def churn_forms():
-    if request.method == 'POST':
-        name = request.form['name']
-        age = request.form['age']
-        gender = request.form['gender']
-        email = request.form['email']
-        prev_sub = request.form['prev_sub']
-        q1 = request.form['q1']
-        q2 = request.form['q2']
-        q3 = request.form['q3']
-        q4 = request.form['q4']
-        q5 = request.form['q5']
-        q6 = request.form['q6']
-        q7 = request.form['q7']
-        q8 = request.form['q8']
-        q9 = request.form['q9']
-        q10 = request.form['q10']
-        q11 = request.form['q11']
-        q12 = request.form['q12']
-        q13 = request.form['q13']
-        reason = request.form['reason']
-        comment = request.form['comment']
-        date_added = date("Y-m-d H:i:s")
-        con = sql.connect("db_web.db")
-        cur = con.cursor()
-        # cur.execute("insert into users(UNAME,CONTACT) values (?,?)",(uname,contact))
-        cur.execute("insert into feedbacks (name, age, gender, email, prev_sub, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, reason, comment, date_added, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                    (name, age, gender, email, prev_sub, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, reason, comment, date_added))
-        con.commit()
-        flash('Feedback Submitted', 'success')
-        return redirect(url_for("churn"))
-    return render_template("/home/churn_forms.html")
-
-
+    
 if __name__ == "__main__":
     app.run()
